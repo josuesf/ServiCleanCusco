@@ -8,7 +8,7 @@ ObjectID = mongojs.ObjectID; //mongodb://<dbuser>:<dbpassword>@ds157653.mlab.com
 var db = mongojs(process.env.MONGO_RUEDA_URL);
 var app = express();
 var server = http.createServer(app);
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 server.listen(port, () => console.log('listening on ' + port));
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
