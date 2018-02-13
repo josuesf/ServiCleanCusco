@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>Registro Virtual</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Rueda Virtual</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="/home">Registro </a>
+                    </li>
+                    <li class="active">
+                        <a href="/publicidad">Publicidad </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/logout">Salir</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="jumbotron">
+        <div class="row">
+            <% if (tipo != 0) { %>
+                <% if (tipo == 1) { %>
+                    <div class="alert alert-danger">
+                        <%= mensaje %>
+                    </div>
+                    <% }
+                        else { %>
+                        <div class="alert alert-success">
+                            <%= mensaje %>
+                        </div>
+                        <% } %>
+                            <% } %>
+                                <div class="col-md-6 col-md-offset-3">
+                                    <h5>Usuarios Conectados</h5>
+                                    <b>
+                                        <%= usuarios %>
+                                    </b>
+                                    <div class="bd-example">
+                                        <form class="form-signin" action="/publicidad" enctype='multipart/form-data' method="post">
+                                            <div class="form-group">
+
+                                                <label for="inputCategoria">Imagen o Video</label>
+                                                <input type="file" name="picture" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputTitulo">Titulo</label>
+                                                <input type="text" class="form-control" required id="inputTitulo" placeholder="Ingresa titulo" name="inputTitulo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputDescripcion">Descripción</label>
+                                                <TextArea class="form-control" name="inputDescripcion" rows="5" required id="inputDescripcion">
+				                                </TextArea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputTelefono">Urls o telefonos</label>
+                                                <input type="text" class="form-control" id="inputTelefono" required data-role="tagsinput" name="inputTelefono">
+
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Publicar</button>
+                                        </form>
+                                    </div>
+                                </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        //const socket = io('http://localhost:8080');
+    </script>
+</body>
+
+</html>

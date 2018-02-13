@@ -1,0 +1,23 @@
+{
+  "name": "servi_clean",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongojs": "^2.4.0"
+  },
+  "devDependencies": {
+    "materialize-css": "^0.100.2",
+    "nodemon": "^1.14.12",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}
